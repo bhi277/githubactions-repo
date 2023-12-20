@@ -1,0 +1,57 @@
+
+---
+name: "Simple Github Action"
+
+on:
+  push:
+    branches:
+      - master
+      - testing
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+
+
+    steps:
+
+
+      - name: "Run the date"
+        run: data
+        shell: bash
+
+      - name: "OS list"
+        run: cat /etc/os-release
+        shell: bash
+
+      - name: "who am i"
+        run: whoami
+        shell: bash
+
+      - name: "List Directory"
+        run: pwd
+             ls -la
+             ll
+             date
+        shell: bash
+
+      - name: "Checkout"
+        uses: actions/checkout@v3
+      
+      - name: "List Directory"
+        run: |
+             pwd
+             ls -la
+             ll
+        shell: bash
+
+      - name: "clone"
+        run: |
+            apt install git
+            git clone https://github.com/Fujikomalan/aws-elb-site.git
+
+
+      - name: "RUN script"
+        run: ./script.sh
+        shell: bash
