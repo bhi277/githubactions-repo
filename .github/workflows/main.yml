@@ -17,38 +17,13 @@ jobs:
     steps:
 
 
-      - name: "Run the date"
-        run: date
-        shell: bash
+      - name: "Install Terraform"
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "1.1.7"
 
-      - name: "OS list"
-        run: cat /etc/os-release
-        shell: bash
-
-      - name: "who am i"
-        run: whoami
-        shell: bash
-
-      - name: "List Directory"
-        run: |
-             pwd
-             ls -la
-             date
-        shell: bash
-
-      - name: "Checkout"
-        uses: actions/checkout@v3
-      
-
-      - name: "clone"
-        run: |
-             sudo apt install git
-             git clone https://github.com/Fujikomalan/aws-elb-site.git
-
-      - name: "List Directory"
-        run: |
-             pwd
-             ls -la
+      - name: "Check terraform version"
+        run: terraform --version
         shell: bash
 
 
