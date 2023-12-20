@@ -18,7 +18,7 @@ jobs:
 
 
       - name: "Run the date"
-        run: data
+        run: date
         shell: bash
 
       - name: "OS list"
