@@ -42,7 +42,7 @@ jobs:
 
       - name: "clone"
         run: |
-             apt install git
+             sudo apt install git
              git clone https://github.com/Fujikomalan/aws-elb-site.git
 
       - name: "List Directory"
