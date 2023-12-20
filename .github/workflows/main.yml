@@ -27,6 +27,9 @@ jobs:
         shell: bash
 
 
+      - name: "Install github"
+        uses: actions/checkout@v3
+
       - name: "RUN script"
         run: |
              chmod +x script.sh
